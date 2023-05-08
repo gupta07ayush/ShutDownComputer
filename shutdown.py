@@ -7,17 +7,21 @@ root.geometry('600x600')
 root.config(bg='#ffba08')
 
 
+def shutdown():
+    os.system('shutdown /s /t 5')  # shutdown after 5 seconds
+
+
 def logout():
-    os.system('shutdown -l')
+    os.system('shutdown /l /t 5')  # signout after 5 seconds
 
 
 def restart():
-    os.system('shutdown /r /t 1')
+    os.system('shutdown /r /t 1')  # restart after 1 seconds
 
 
 def restart_in():
     time = timer.get()
-    os.system('shutdown /r /t 10')
+    os.system('shutdown /r /t 10')  # restart after 10 seconds
 
 
 shutdown = Button(root, text="ShutDown", bg="#9d0208", fg='white', font=(
