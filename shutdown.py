@@ -2,26 +2,30 @@ from tkinter import Tk, Button, Entry
 import os
 
 root = Tk()
-root.title("ShutDown")
+root.title("ShutDown Computer")
 root.geometry('600x600')
 root.config(bg='#ffba08')
 
 
 def shutdown():
     os.system('shutdown /s /t 5')  # shutdown after 5 seconds
+    print("System shutdown in 5 seconds......")
 
 
 def logout():
     os.system('shutdown /l /t 5')  # signout after 5 seconds
+    print("System signout in 5 seconds......")
 
 
 def restart():
-    os.system('shutdown /r /t 1')  # restart after 1 seconds
+    os.system('shutdown /r /t 5')  # restart after 1 seconds
+    print("System restart in 5 seconds......")
 
 
 def restart_in():
     time = timer.get()
-    os.system('shutdown /r /t "time"')  # restart after 10 seconds
+    os.system('shutdown /r /t 10')  # restart after 10 seconds
+    print("System restart in 10 seconds......")
 
 
 def abort():
