@@ -1,9 +1,16 @@
 from tkinter import Tk, Button, Entry
+import os
 
 root = Tk()
 root.title("ShutDown")
 root.geometry('600x600')
 root.config(bg='#ffba08')
+
+
+def restart():
+    os.system('shutdown /r /t 1')
+    
+
 
 shutdown = Button(root, text="ShutDown", bg="#9d0208", fg='white', font=(
     'arial', 20, 'bold'), border=7, relief='raised')
@@ -14,7 +21,7 @@ logout = Button(root, text="Log out", bg="#9d0208", fg='white', font=(
 logout.place(x=150, y=200, width=200, height=50)
 
 restart = Button(root, text="Restart", bg="#9d0208", fg='white', font=(
-    'arial', 20, 'bold'), border=7, relief='raised')
+    'arial', 20, 'bold'), border=7, relief='raised', command=restart)
 restart.place(x=150, y=300, width=200, height=50)
 
 restart_timer = Button(root, text="Restart  in ", bg="#9d0208", fg='white', font=(
