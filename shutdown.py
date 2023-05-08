@@ -21,7 +21,11 @@ def restart():
 
 def restart_in():
     time = timer.get()
-    os.system('shutdown /r /t 10')  # restart after 10 seconds
+    os.system('shutdown /r /t "time"')  # restart after 10 seconds
+
+
+def abort():
+    os.system('shutdown /a')
 
 
 shutdown = Button(root, text="ShutDown", bg="#9d0208", fg='white', font=(
@@ -45,5 +49,10 @@ timer = Entry(root, bg="#ffd000", fg='black', font=(
 timer.place(x=380, y=401, width=60, height=48)
 timer.insert(0, '10')
 timer.focus_set()
+
+abort = Button(root, text="Abort ", bg="#6a040f", fg='white', font=(
+    'arial', 20, 'bold'), border=7, relief='raised', command=abort)
+abort.place(x=150, y=500, width=200, height=50)
+
 
 root.mainloop()
