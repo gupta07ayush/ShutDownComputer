@@ -7,13 +7,17 @@ root.geometry('600x600')
 root.config(bg='#ffba08')
 
 
+def logout():
+    os.system('shutdown -l')
+
+
 def restart():
     os.system('shutdown /r /t 1')
 
 
 def restart_in():
     time = timer.get()
-    os.system('shutdown /r /t time')
+    os.system('shutdown /r /t 10')
 
 
 shutdown = Button(root, text="ShutDown", bg="#9d0208", fg='white', font=(
@@ -21,7 +25,7 @@ shutdown = Button(root, text="ShutDown", bg="#9d0208", fg='white', font=(
 shutdown.place(x=150, y=100, width=200, height=50)
 
 logout = Button(root, text="Log out", bg="#9d0208", fg='white', font=(
-    'arial', 20, 'bold'), border=7, relief='raised')
+    'arial', 20, 'bold'), border=7, relief='raised', command=logout)
 logout.place(x=150, y=200, width=200, height=50)
 
 restart = Button(root, text="Restart", bg="#9d0208", fg='white', font=(
